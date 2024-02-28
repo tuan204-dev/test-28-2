@@ -11,6 +11,7 @@ const CreateForm = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm<IPost>({
     defaultValues: {},
     resolver: yupResolver(postSchema),
@@ -23,6 +24,7 @@ const CreateForm = () => {
 
   const onSubmit = useCallback((data: IPost) => {
     prepend(data)
+    reset()
   }, [])
 
   return (
