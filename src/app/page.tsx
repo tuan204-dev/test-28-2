@@ -44,18 +44,20 @@ export default function Home() {
 
   return (
     <FormProvider {...form}>
-      <div className="flex flex-col gap-y-3 max-w-[500px] mx-auto">
-        {postList.map((post, idx) => (
-          <PostCard
-            key={idx}
-            title={post.title}
-            author={post.author}
-            content={post.content}
-            onDelete={() => handleDeletePost(idx)}
-          />
-        ))}
+      <div className="flex flex-col md:flex-row">
+        <CreateForm />
+        <div className="flex-1 flex flex-col gap-y-3 md:max-w-[500px] md:mx-auto">
+          {postList.map((post, idx) => (
+            <PostCard
+              key={idx}
+              title={post.title}
+              author={post.author}
+              content={post.content}
+              onDelete={() => handleDeletePost(idx)}
+            />
+          ))}
+        </div>
       </div>
-      <CreateForm />
     </FormProvider>
   )
 }

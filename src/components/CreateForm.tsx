@@ -28,7 +28,7 @@ const CreateForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col gap-4 shadow-sm p-5 rounded-md max-w-[400px] mx-auto"
+      className="flex flex-col gap-4 shadow-sm p-5 rounded-md md:max-w-[400px] bg-slate-50"
     >
       <label>Title</label>
       <input
@@ -57,7 +57,7 @@ const CreateForm = () => {
       {errors.content && (
         <span className="text-sm text-red-600">{errors.content.message}</span>
       )}
-      <button>Post</button>
+      <button className='bg-slate-500 px-4 py-2 rounded-lg uppercase text-white font-semibold'>Post</button>
     </form>
   )
 }
